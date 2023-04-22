@@ -4,4 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 def welcome_home(request):
-    return HttpResponse('Hello World')
+    #return HttpResponse('Hello World')
+    return render(request, 'attenuation/home.html')
