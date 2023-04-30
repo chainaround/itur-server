@@ -1,3 +1,38 @@
+{% extends 'attenuation/base.html' %}
+
+{% block title %} Main Page {% endblock title %}
+
+{% block content %}
+
+<h2>Main Page</h2>
+<div class="container">
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Product Shop</h1>
+    <p class="fs-5 text-body-secondary">Lowest Price</p>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    {% for pd in product %}
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm" style="height: 400px; margin-bottom: 15px;">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">{{pd.name}}</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">{{pd.price}} <small class="text-body-secondary fw-light">Baht/piece</small></h1>
+          <p>{{pd.description|truncatechars:200}}</p>
+          <button type="button" class="w-100 btn btn-lg btn-outline-primary">Product Detail</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% endblock content %}
+
+
+<!--
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
@@ -16,8 +51,9 @@
     
 
 <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
+-->
     <!-- Favicons -->
+<!--
 <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
@@ -101,8 +137,9 @@
       }
     </style>
 
-    
+-->
     <!-- Custom styles for this template -->
+<!--
     <link href="https://getbootstrap.com/docs/5.3/examples/checkout/checkout.css" rel="stylesheet">
   </head>
   <body class="bg-body-tertiary">
@@ -387,3 +424,4 @@
       <script src="https://getbootstrap.com/docs/5.3/examples/checkout/checkout.js"></script>
   </body>
 </html>
+-->

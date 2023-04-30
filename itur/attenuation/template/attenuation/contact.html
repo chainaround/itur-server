@@ -1,0 +1,47 @@
+{% extends 'attenuation/base.html' %}
+
+{% block title %} Contact Us {% endblock title %}
+
+{% block content %}
+
+<h2>Contact Us</h2>
+
+{% if alert == 'success' %}
+<div class="alert alert-success">
+    <strong>Success!</strong> Admin will contact you as soon as possible.
+</div>
+{% endif %}
+<div class="container">
+    <form method="post">
+        {% csrf_token % %}
+        <div class="form-group">
+            <label for="name">Contact Name</label>
+            <input type="text" class="form-control" id="name" name="name" />
+        </div><br />
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" />
+        </div><br />
+        <div class="form-group">
+            <label for="detail">Detail</label>
+            <textarea class="form-control" rows="5" id="detail" name="detail"></textarea>
+        </div><br />
+        <div class="form-group">
+            <label for="mail">Mail</label>
+            <input type="email" class="form-control" id="mail" name="mail" />
+        </div><br />
+        <button type="submit" class="btn btn-primary" >Submit</button>
+
+    </form><br />
+
+</div>
+<div class="container">
+    {% for staff in namelist %}
+    <span>{{staff.name}}</apan><br/>
+    <span>{{staff.mobile}}</span><br />
+    <span>{{staff.mail}}</span><br />
+    <hr />
+    {% endfor %}
+</div>
+
+{% endblock content %}
